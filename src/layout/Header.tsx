@@ -3,36 +3,43 @@ import PanvarseLogo from "/public/panaverse-logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import Wrapper from "@/shared/Wrapper";
+import { Moon } from 'lucide-react';
+import blog from "@/app/blog/page";
+
 
 
 const Header = () => {
   return (
-  <div>
-   <Wrapper>
-    <header className="flex justify-between bg-white sticky top-0 items-center">
+
+   
+    <header className="flex sm:flex-shrink-0 md:flex justify-between sticky top-0 ">
       {/* Logo */}
-      <div className="w-20">
-        {/* <h2 className="text-xl font-bold ">Panaverse Dao</h2> */}
+      <div className="w-20 ml-16">
         <Link href={"/"}>
           <Image src={PanvarseLogo} alt="Panaverse Logo" />
         </Link>
       </div>
       {/* Navigation Bar */}
-      <ul className="flex space-x-8 font-semibold text-lg uppercase">
+      <ul className="flex items-center space-x-8 font-semibold text-lg uppercase mr-16">
         <li>
           <Link href={"/"}> Home</Link>
         </li>
         <li>
-          <Link href={"#"}> Blog</Link>
+          <Link href={'/blog'}> Blog</Link>
         </li>
         <li>
           <Link href={"#"}> Video</Link>
-        </li>
-      </ul>
+            </li>
+            <span className="">
+            <Moon />
+            </span>
+          </ul>
+         
+         
       
     </header>
-      </Wrapper>
-      </div>
+      
+
     
   );
 };

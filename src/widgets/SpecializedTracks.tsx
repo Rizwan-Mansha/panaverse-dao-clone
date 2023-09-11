@@ -1,8 +1,10 @@
+'use client'
+
 import QuarterBox from "@/shared/QuarterBox";
 import { QuartersData } from "./CoreTracks";
 import Wrapper from "@/shared/Wrapper";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Image1 from "@/assets/images/image-1.png";
 import Image2 from "@/assets/images/image-2.png";
 import Image3 from "@/assets/images/image-3.png";
@@ -13,6 +15,11 @@ import SpecilizedPrograms from "@/shared/SpecilizedPrograms";
 import ProgramData from "@/shared/specializedProgramsData";
 
 const SpecialiedTracks = () => {
+
+  const [selectedItem, setSelectedItem] = useState("cn")
+
+  const selectedItemData = ProgramData.find((item) => item.slug === "cn");
+
   return (
     <section>
       <Wrapper>
@@ -26,10 +33,10 @@ const SpecialiedTracks = () => {
           </p>
         </div>
 
-        <div className="flex">
-          <div className="px-10 pt-10 border rounded-2xl max-w-3xl">
+        <div className="flex ">
+          <div className="px-10 pt-10 border rounded-2xl basis-8/12">
             {/* left side */}
-            <p className="font-medium text-green-700 mb-2">
+            <p className="font-medium text-primary mb-2">
               Specialized Program
             </p>
             <h2 className="font-medium text-3xl max-w-lg">
@@ -42,12 +49,12 @@ const SpecialiedTracks = () => {
               merge the best of cutting-edge decentralized distributed
               blockchains with 3D metaverse client experiences.
             </p>
-            <p className="underline font-medium text-green-800 mb-2">
+            <p className="underline font-medium text-primary mb-2">
               <Link href={"#"}>Learn More &gt; </Link>
             </p>
 
             {/* Quarters Box */}
-            <div className=" flex space-x-1  md:flex-row gap-x-6 lg:gap-x-12 mt-8">
+            <div className="  flex flex-col  sm:items-center  md:flex-row gap-x-6 lg:gap-x-12 mt-8">
               <QuarterBox
                 header={"Quarter IV"}
                 description={"W2-201: Developing Planet-Scale Web 2.0 Serverless Cloud Cloud Apps and APIs using Next.js 13 and Cloud Development Kit (CDK) for Terraform"}
@@ -65,19 +72,22 @@ const SpecialiedTracks = () => {
           </div>
 
           {/* Right Side */}
-          <div className="mx-16 flex flex-col">
+          <div className="mx-16 " >
             {ProgramData.map(item => (
+              <div key={item.slug}>
               <SpecilizedPrograms
                 imageSrc={item.imageSrc}
                 alt={item.alt}
-                programName={item.programName}
+                programName={item.header}
                 
-              />
+                />
+                </div>
             ))}
+            </div>
 
             
           </div>
-        </div>
+        
       </Wrapper>
     </section>
   );

@@ -12,7 +12,7 @@ import { Youtube } from 'lucide-react';
 const Footer = () => {
     return (
    
-    <div className='mt-12 bg-[#2596be] font-semibold text-white py-3'>
+    <div className=' bg-[#2596be] font-semibold text-white py-3'>
          <div className='  text-xl '>
             <ul className='flex justify-center gap-x-20 uppercase'>
               <li><Link href={""}>Home</Link></li>

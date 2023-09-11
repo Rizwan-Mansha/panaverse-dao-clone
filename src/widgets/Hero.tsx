@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="flex items-center flex-col lg:flex-row ">
           {/* Left Side */}
           <div  className="flex-1 ">
-            <h4 className="text-teal-700 font-semibold text-lg ">
+            <h4 className="text-primary font-semibold text-lg ">
               Presidential Initiative for Artificial Intelligence and Computing
               (PIAIC).
             </h4>

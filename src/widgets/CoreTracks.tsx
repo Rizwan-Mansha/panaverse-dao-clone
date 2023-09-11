@@ -45,7 +45,7 @@ const CoreTracks = () => {
       <Wrapper>
         {/* Content */}
         <div className="max-w-screen-md">
-          <p className="font-medium text-green-800 mb-2">PROGRAM OF STUDIES</p>
+          <p className="font-medium text-primary mb-2">PROGRAM OF STUDIES</p>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  font-semibold whitespace-pre-line">
             {header}
@@ -62,18 +62,22 @@ const CoreTracks = () => {
 
         {/* Boxes */}
         {/* Method:-1 with Mapping */}
-        <div className="mt-14 flex space-x-1  md:flex-row gap-x-6 lg:gap-x-12">
+
+       <div className="flex mt-14 gap-x-6  text-sm">
        {
-        QuartersData.map((item,index) => (
-          <QuarterBox
-            header={item.header}
-            description={item.description}
-            number={index+1}
-            />
-        
-          ))
-        }
-      </div> 
+            QuartersData.map((item, index) => (
+           
+              <QuarterBox
+                key={index}
+                header={item.header}
+                description={item.description}
+                number={item.number}
+                />
+            
+            ))
+           
+          }
+          </div>
      
 
 
