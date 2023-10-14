@@ -41,7 +41,7 @@ const CoreTracks = () => {
   //mapping for Quarter Box data to prevent code repeatation
 
   return (
-    <section className="mt-16 lg:mt-28">
+    <section className="mt-[470px] md:mt-[500px] lg:mt-28">
       <Wrapper>
         {/* Content */}
         <div className="max-w-screen-md">
@@ -57,33 +57,27 @@ const CoreTracks = () => {
           </p>
         </div>
         <div>
-          <Button text={"Learn More"} />
+          <Button text={'Learn More'} />
         </div>
 
         {/* Boxes */}
         {/* Method:-1 with Mapping */}
 
-       <div className="flex mt-14 gap-x-6  text-sm">
-       {
-            QuartersData.map((item, index) => (
-           
-              <QuarterBox
-                key={index}
-                header={item.header}
-                description={item.description}
-                number={item.number}
-                />
-            
-            ))
-           
-          }
-          </div>
-     
-
+        <div className="max-w-7xl mr-[2.5%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-32 lg:gap-6  text-sm">
+          {QuartersData.map((item, index) => (
+            <QuarterBox
+              key={index}
+              header={item.header}
+              description={item.description}
+              number={item.number}
+              numberTop="md:mt-10"
+            />
+          ))}
+        </div>
 
         {/* Method:-2 with mapping */}
-        
-      {/* <div className="flex flex-col gap-y-6 md:flex-row  max-w-screen-xl gap-x-10 mt-10">
+
+        {/* <div className="flex flex-col gap-y-6 md:flex-row  max-w-screen-xl gap-x-10 mt-10">
         {QuartersData.map(item => {
           return (
               <div className=" border rounded-xl flex-1 relative flex flex-col justify-center  p-14  px-8 py-16 ">

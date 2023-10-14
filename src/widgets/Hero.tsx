@@ -7,7 +7,7 @@ import Button from "../shared/Button";
 
 const Hero = () => {
   return (
-    <section >
+    <section className="max-w-7xl max-h-screen mt-12">
       <Wrapper>
         <div className="flex items-center flex-col lg:flex-row ">
           {/* Left Side */}
