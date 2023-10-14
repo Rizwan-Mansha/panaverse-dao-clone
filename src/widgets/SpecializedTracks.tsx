@@ -1,24 +1,23 @@
-'use client'
+'use client';
 
-import QuarterBox from "@/shared/QuarterBox";
-import { QuartersData } from "./CoreTracks";
-import Wrapper from "@/shared/Wrapper";
-import Link from "next/link";
-import React, { useState } from "react";
-import Image1 from "@/assets/images/image-1.png";
-import Image2 from "@/assets/images/image-2.png";
-import Image3 from "@/assets/images/image-3.png";
-import Image4 from "@/assets/images/image-4.png";
-import Image5 from "@/assets/images/image-5.png";
-import Image6 from "@/assets/images/image-6.png";
-import SpecilizedPrograms from "@/shared/SpecilizedPrograms";
-import ProgramData from "@/shared/specializedProgramsData";
+import QuarterBox from '@/shared/QuarterBox';
+import { QuartersData } from './CoreTracks';
+import Wrapper from '@/shared/Wrapper';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import Image1 from '@/assets/images/image-1.png';
+import Image2 from '@/assets/images/image-2.png';
+import Image3 from '@/assets/images/image-3.png';
+import Image4 from '@/assets/images/image-4.png';
+import Image5 from '@/assets/images/image-5.png';
+import Image6 from '@/assets/images/image-6.png';
+import SpecilizedPrograms from '@/shared/SpecilizedPrograms';
+import ProgramData from '@/shared/specializedProgramsData';
 
 const SpecialiedTracks = () => {
+  const [selectedItem, setSelectedItem] = useState('cn');
 
-  const [selectedItem, setSelectedItem] = useState("cn")
-
-  const selectedItemData = ProgramData.find((item) => item.slug === "cn");
+  const selectedItemData = ProgramData.find(item => item.slug === 'cn');
 
   return (
     <section className="max-w-7xl mr-[2.5%] mt-20">
@@ -33,7 +32,7 @@ const SpecialiedTracks = () => {
           </p>
         </div>
 
-        <div className="flex flex-col">
+        <div className="flex flex-col lg:flex-row">
           <div className="px-10 pt-10 border rounded-2xl basis-8/12">
             {/* left side */}
             <p className="font-medium text-primary mb-2">Specialized Program</p>
